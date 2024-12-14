@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            max-width: 1000px;
+            /* background-color: rgb(89, 96, 96); */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo{
+            width: 50px;
+            height: 50px;
+            /* background-color: black; */
+        }
+
+        .btn{
+            width: 50px;
+            height: 50px;
+            /* background-color: black; */
+            border: 1px solid black ; 
+            border-radius: 5px;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .logo img{
+            width: 100%;
+        }
+
+        .btn span{
+            position: absolute;
+            display: inline-block;
+            width: 50%;
+            background-color: black;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn span:nth-last-of-type(1){
+            top: 15px;
+        }
+        .btn span:nth-last-of-type(2){
+            top: 23px;
+        }
+        .btn span:nth-last-of-type(3){
+            top: 31px;
+        }
+
+        .menu{
+            width: 100%;
+            height: 60vh;
+            background-color: rgba(0,0, 0, 0.5);
+            position: fixed;
+            top: -100%;
+            left: 0;
+            z-index: 999;
+            transition: all 0.6s ease;
+        }
+
+        .menu ul li a{
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .menu ul{
+            list-style: none;
+            text-align: center;
+        }
+
+        .hide{
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="icon-128x128.webp" alt=""></div>
+        <div class="btn"><span></span><span></span><span></span></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">top</a></li>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">contents</a></li>
+                <li><a href="#">test</a></li>
+                <li><a href="#">test</a></li>
+                <li><a href="#">test</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const btn = document.querySelector(".btn");
+        const menu = document.querySelector(".menu");
+        btn.addEventListener("click",()=>{
+            btn.classList.toggle("hide");
+            menu.classList.toggle("hide");
+        })
+    </script>
+</body>
+</html>
